@@ -1,6 +1,6 @@
 # Frontend playground
 
-7 years experience in Vue, not nearly as much in React! I better bring myself up to speed on Facebook's oh so popular ecosystem...
+React and Vue Isomorphic apps for iPlayer data model.
 
 !["Clone of a certain video player site](preview.png 'Clone of a certain video player site')
 
