@@ -1,6 +1,8 @@
-import { gql } from 'apollo-server-hapi';
+import homepageJson from '../state/homepage.json' with { type: 'json' };
 
-export const typeDefs = gql`
+export const typeDefs = {
+  Query: `    getBundlesForPath(path: String): [Bundle]`,
+  root: `
   enum BundleType {
     default
     hero
@@ -98,24 +100,16 @@ export const typeDefs = gql`
     preferences: BundlePreferences
     entities: [BundleEntity]
   }
-  type Query {
-    getBundlesForPath(path: String): [Bundle]
-  }
-`;
-
-export default typeDefs;
+`,
+};
 
 export const resolvers = {
   Query: {
     getBundlesForPath(_parent: any, { path }: { path: string }) {
       if (path === '/') {
-        return scrapedData;
+        return homepageJson.bundles;
       }
-      return scrapedData;
+      return homepageJson.bundles;
     },
   },
 };
-
-import json from '../state/homepage.js';
-
-const scrapedData = json.bundles;

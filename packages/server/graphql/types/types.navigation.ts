@@ -1,6 +1,9 @@
-import { gql } from 'apollo-server-hapi';
+import { IResolvers } from 'mercurius';
+import homepageJson from '../state/homepage.json' with { type: 'json' };
 
-export const typeDefs = gql`
+export const typeDefs = {
+  Query: `getNavigationItems: NavigationItemsResult`,
+  root: `
   interface NavigationItem {
     id: ID!
     title: String!
@@ -43,20 +46,17 @@ export const typeDefs = gql`
     accessibilityHelpHref: String
     useLiveHrefs: Boolean
   }
-
-  type Query {
-    getNavigationItems: NavigationItemsResult
-  }
-`;
+`,
+};
 export default typeDefs;
 
-export const resolvers = {
+export const resolvers: IResolvers = {
   NavigationSubItem: {
-    __resolveType(obj: { liveHref: any; kind: any }) {
-      if (obj.liveHref) {
+    resolveType: (parameter: { liveHref: any; kind: any }, context, info) => {
+      if (parameter.liveHref) {
         return 'NavigationItemChannel';
       }
-      if (obj.kind) {
+      if (parameter.kind) {
         return 'NavigationItemCategory';
       }
       return null;
@@ -64,11 +64,8 @@ export const resolvers = {
   },
   Query: {
     getNavigationItems(/* parent, args, context */) {
-      return scrapedData;
+      return homepageJson.navigation;
       // return users.find(user => user.id === args.id);
     },
   },
 };
-
-import json from '../state/homepage.js';
-const scrapedData = json.navigation;

@@ -1,6 +1,8 @@
-import { gql } from 'apollo-server-hapi';
+import homepageJson from '../state/homepage.json' with { type: 'json' };
 
-export const typeDefs = gql`
+export const typeDefs = {
+  Query: ` getIdentity(userId: ID!): Identity`,
+  root: `
   type Identity {
     userId: String!
     signedIn: Boolean!
@@ -9,19 +11,14 @@ export const typeDefs = gql`
     ageBracket: String
     findOutMoreUrl: String
   }
-  type Query {
-    getIdentity(userId: ID!): Identity
-  }
-`;
+`,
+};
 export default typeDefs;
 
 export const resolvers = {
   Query: {
     getIdentity(_parent: any, { userId }: { userId: string }) {
-      return { userId, ...scrapedData };
+      return { userId, ...homepageJson.identity };
     },
   },
 };
-
-import json from '../state/homepage.js';
-const scrapedData = json.identity;

@@ -1,6 +1,6 @@
 # Frontend playground
 
-React and Vue Isomorphic apps for iPlayer data model.
+7 years experience in Vue, not nearly as much in React! I better bring myself up to speed on Facebook's oh so popular ecosystem...
 
 !["Clone of a certain video player site](preview.png 'Clone of a certain video player site')
 
@@ -25,7 +25,7 @@ http://localhost:3000/graphql
 ## Development
 
 - `npm run dev` : starts Vite servers for the frontend UIs, starts the Hapi api & shell app server.
-  - Typescript --inspect powered by ts-node node module.
+  - Typescript --inspect powered by tsx.
   - Vite hot reload/devtools enabled while viewing frontend apps
   - server at http://localhost:3000
   - /frontend/@private/react-ui/{p\*} proxy route localhost:3200

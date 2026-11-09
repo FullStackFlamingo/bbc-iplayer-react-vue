@@ -1,6 +1,6 @@
-
-$--breakpoint-sm:25em;
-$--breakpoint-md:37.5em;
-$--breakpoint-lg:56.25em;
-$--breakpoint-xlg:63em;
-$--breakpoint-xxlg:80em;
+// scss version of breakpoints vars so we can use them in media queries
+$breakpoint-sm: 25em;
+$breakpoint-md: 37.5em;
+$breakpoint-lg: 56.25em;
+$breakpoint-xlg: 63em;
+$breakpoint-xxlg: 80em;
