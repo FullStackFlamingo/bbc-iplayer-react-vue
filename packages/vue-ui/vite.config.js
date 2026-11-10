@@ -8,8 +8,11 @@ export default defineConfig({
     port: 3210,
     strictPort: true,
     hmr: {
-      clientPort: 3210,
+      port: 3211,
       // port: 3211,
+    },
+    ws: {
+      port: 24242,
     },
   },
   base: '/frontend/@private/vue-ui/',
@@ -17,7 +20,7 @@ export default defineConfig({
   build: {
     manifest: true,
     ssrManifest: true,
-    rollupOptions: {
+    rolldownOptions: {
       input: './src/entry-client.js',
     },
   },
@@ -25,7 +28,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@private/design-system/vars.scss";`,
+        additionalData: `@use "@private/design-system/vars.scss" as designSystemVars;`,
       },
     },
   },

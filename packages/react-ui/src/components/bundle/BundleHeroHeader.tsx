@@ -1,5 +1,6 @@
 import { breakpoint } from '@private/design-system/vars';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { SvgUse } from '../components-global/SvgUse';
 import slugify from 'slugify';
 
@@ -58,10 +59,10 @@ const BundleHeroSynopsis = styled.p`
   color: var(--color-subtle-text);
 `;
 
-interface BundleHeroHeaderProps {
+type BundleHeroHeaderProps = {
   className?: string;
   bundle: IPlayer.Bundle;
-}
+};
 export function BundleHeroHeader({ bundle, className }: BundleHeroHeaderProps) {
   const { episode } = bundle.entities[0];
   const slug = slugify(episode.title.default);

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { SvgUse } from './components-global/SvgUse';
 
 const SearchSectionRoot = styled.div`
@@ -35,7 +35,7 @@ const SearchSectionButton = styled.button`
     height: calc(var(--size-base-unit) * 4);
   }
 `;
-export function SearchSection(props: any) {
+export function SearchSection(props: { className: string }) {
   return (
     <SearchSectionRoot {...props}>
       <div className="wrapper">

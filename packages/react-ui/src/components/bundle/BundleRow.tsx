@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { useMedia } from 'react-use';
 import { BundleEntity } from './BundleEntity';
 import { BundleRowArrows } from './BundleRowArrows';
@@ -50,9 +51,9 @@ const BundleRowLi = styled.li<{ obscured: boolean }>`
   }
 `;
 
-interface BundleSectionProps {
+type BundleSectionProps = {
   bundle: IPlayer.Bundle;
-}
+};
 export function BundleRow({ bundle }: BundleSectionProps) {
   const isMqMedium = useMedia('(min-width: 37.5em)', false);
   const isMqLarge = useMedia('(min-width: 63em)', false);

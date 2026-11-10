@@ -33,7 +33,7 @@ defineProps({
     color: var(--color-accent-1);
   }
 }
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .sub-nav-container {
     white-space: normal;
     display: block;
@@ -50,7 +50,7 @@ defineProps({
     }
   }
 }
-@media (min-width: $--breakpoint-xlg) {
+@media (min-width: designSystemVars.$breakpoint-xlg) {
   .sub-nav-container {
     columns: 5;
   }

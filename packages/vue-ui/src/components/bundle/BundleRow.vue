@@ -121,12 +121,12 @@ const scrollToPageByIndex = (index) => {
   opacity: 0.3;
 }
 
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .bundle-row__entity {
     width: 33.333%;
   }
 }
-@media (min-width: $--breakpoint-xlg) {
+@media (min-width: designSystemVars.$breakpoint-xlg) {
   .bundle-row__entity {
     width: 25%;
   }

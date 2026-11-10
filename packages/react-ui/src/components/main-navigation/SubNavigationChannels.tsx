@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { SvgUse } from '../components-global/SvgUse';
 
 const SubNavigationChannelsRoot = styled.ul`
@@ -27,9 +28,9 @@ const SubNavItemIconSvgUseFocused = styled(SubNavItemIconSvgUse)`
   }
 `;
 
-interface SubNavigationChannelsProps {
+type SubNavigationChannelsProps = {
   subItems: Array<IPlayer.MainNav.SubNavItem>;
-}
+};
 export function SubNavigationChannels({ subItems }: SubNavigationChannelsProps) {
   return (
     <SubNavigationChannelsRoot>

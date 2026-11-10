@@ -1,8 +1,9 @@
 import { useRef, useState } from 'react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import useResizeObserver from '@react-hook/resize-observer';
-import { useScroll } from 'react-use';
 import { SvgUse } from './SvgUse';
+import useScroll from '../../hooks/use-scroll';
 
 const Scroller = styled.div`
   position: relative;
@@ -29,11 +30,11 @@ const ScrollerButton = styled.button`
   }
 `;
 
-interface ScrollXWithButtonsProps {
+type ScrollXWithButtonsProps = {
   leftAriaLabel?: string;
   rightAriaLabel?: string;
   children: React.ReactNode;
-}
+};
 
 export function ScrollXWithButtons({
   leftAriaLabel = 'scroll left',

@@ -1,5 +1,6 @@
 import slugify from 'slugify';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { ResponsiveImage } from '../components-global/ResponsiveImage';
 
 const BundleEntityRoot = styled.a`
@@ -20,11 +21,11 @@ const BundleEntityResponsiveImage = styled(ResponsiveImage)`
 const BundleEntityTitle = styled.h3`
   margin-top: calc(var(--size-base-unit) * 2);
 `;
-interface BundleEntityProps {
+type BundleEntityProps = {
   type: string;
   entity: IPlayer.BundleEntity;
   onFocus: React.FocusEventHandler<HTMLAnchorElement>;
-}
+};
 export function BundleEntity({ entity, type, onFocus }: BundleEntityProps) {
   const slug = slugify(entity.episode.title.default);
   const id = entity.episode.previewId || entity.episode.id;
@@ -40,6 +41,7 @@ export function BundleEntity({ entity, type, onFocus }: BundleEntityProps) {
   switch (type) {
     case 'portrait':
       imageRecipe = image.portrait || image.default;
+      break;
     default:
       imageRecipe = image.promotional || image.default;
   }

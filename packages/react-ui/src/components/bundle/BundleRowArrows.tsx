@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { SvgUse } from '../components-global/SvgUse';
 
 const BundleRowArrowsRoot = styled.div`
@@ -27,13 +28,13 @@ const BundleRowArrowButtonIcon = styled(SvgUse)`
   display: inline-block;
 `;
 
-interface BundleRowArrowsProps {
+type BundleRowArrowsProps = {
   className?: string;
   onClickLeft: React.MouseEventHandler<HTMLButtonElement>;
   onClickRight: React.MouseEventHandler<HTMLButtonElement>;
   leftDisabled?: boolean;
   rightDisabled?: boolean;
-}
+};
 
 export function BundleRowArrows({
   className,

@@ -1,14 +1,14 @@
-import { createClient, dedupExchange, cacheExchange, fetchExchange, ssrExchange, Provider } from 'urql';
+import { createClient, cacheExchange, fetchExchange, ssrExchange, Provider, SSRData } from 'urql';
 import { requestPolicyExchange } from '@urql/exchange-request-policy';
+import { ReactNode } from 'react';
 
-export const createUrqlProvider = function (preloadedUrqlState?: any) {
+export const createUrqlProvider = function (preloadedUrqlState?: SSRData) {
   const ssrUrql = ssrExchange({ isClient: !import.meta.env.SSR, initialState: preloadedUrqlState });
 
   const client = createClient({
     suspense: true,
     url: import.meta.env.SSR ? 'http://localhost:3000/graphql' : '/graphql',
     exchanges: [
-      dedupExchange,
       requestPolicyExchange({
         ttl: 60 * 1000 * 2, // 2 mins
       }),
@@ -19,7 +19,8 @@ export const createUrqlProvider = function (preloadedUrqlState?: any) {
   });
 
   return {
-    UrqlProvider: (props: any) => {
+    // eslint-disable-next-line @eslint-react/component-hook-factories
+    UrqlProvider: (props: { children: ReactNode }) => {
       return <Provider value={client}>{props.children}</Provider>;
     },
     ssrUrql,

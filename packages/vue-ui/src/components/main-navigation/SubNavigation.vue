@@ -24,7 +24,7 @@ defineProps({
   width: 100%;
 }
 
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .sub-nav {
     display: none;
     position: absolute;

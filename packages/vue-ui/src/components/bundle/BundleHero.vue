@@ -68,7 +68,7 @@ $--gradientRight: linear-gradient(-90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0
   background: $--gradientBottom;
 }
 
-@media (min-width: $--breakpoint-lg) {
+@media (min-width: designSystemVars.$breakpoint-lg) {
   $--headerWidth: 33.3333%;
   .bundle-hero__aspect {
     align-items: center;
@@ -91,7 +91,7 @@ $--gradientRight: linear-gradient(-90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0
     background: $--gradientBottom, $--gradientleft;
   }
 }
-@media (min-width: $--breakpoint-xxlg) {
+@media (min-width: designSystemVars.$breakpoint-xxlg) {
   .bundle-hero {
     max-width: var(--size-main-wrapper-lg);
   }

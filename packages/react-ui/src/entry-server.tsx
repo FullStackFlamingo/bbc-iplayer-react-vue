@@ -1,5 +1,5 @@
 import ReactDOMServer from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
+import { StaticRouter } from 'react-router-dom';
 import prepass from 'react-ssr-prepass';
 import { Provider } from 'react-redux';
 import { createStore } from './store';

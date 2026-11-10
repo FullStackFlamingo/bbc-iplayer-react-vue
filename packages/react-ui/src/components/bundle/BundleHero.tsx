@@ -1,8 +1,8 @@
 import { breakpoint } from '@private/design-system/vars';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { ResponsiveImage } from '../components-global/ResponsiveImage';
 import { BundleHeroHeader } from './BundleHeroHeader';
-
 const cssValGradientBottom = `linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 35%)`;
 const cssValGradientleft = `linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 35%)`;
 const cssValGradientRight = `linear-gradient(-90deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 35%)`;
@@ -16,7 +16,7 @@ const BundleHeroRoot = styled.section`
   position: relative;
   margin: 0 auto;
   max-width: var(--size-main-wrapper);
-  @media (min-width: ${breakpoint.xxlg}) {
+  @media (min-width: ${breakpoint.sm}) {
     max-width: var(--size-main-wrapper-lg);
   }
 `;
@@ -85,9 +85,9 @@ const BundleHeroHeaderStyled = styled(BundleHeroHeader)`
   }
 `;
 
-interface BundleHeroProps {
-  bundle: any;
-}
+type BundleHeroProps = {
+  bundle: IPlayer.Bundle;
+};
 
 export function BundleHero({ bundle }: BundleHeroProps) {
   const { episode } = bundle.entities[0];

@@ -1,5 +1,5 @@
 import { useResponsiveImage } from './use-responsive-image';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 const ResponsiveImageRoot = styled.div<{ type: string }>`
   position: relative;
@@ -17,11 +17,11 @@ const ResponsiveImageImg = styled.img`
   width: 100%;
 `;
 
-interface ResponsiveImageProps {
+type ResponsiveImageProps = {
   className?: string;
   recipe: string;
   type?: string;
-}
+};
 export function ResponsiveImage({ className, recipe, type = 'default' }: ResponsiveImageProps) {
   const { recipeToSrcSet, sizes, aspectRatioType } = useResponsiveImage({ recipe, type });
 

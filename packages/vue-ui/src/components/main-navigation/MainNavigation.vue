@@ -113,7 +113,7 @@ const menuOpen = ref(false);
     transform: translateY(0);
   }
 }
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .main-nav__wrapper {
     display: flex;
     padding: 0 calc(var(--size-base-unit) * 4);
@@ -133,7 +133,7 @@ const menuOpen = ref(false);
     margin-bottom: 0;
   }
 }
-@media (min-width: $--breakpoint-xxlg) {
+@media (min-width: designSystemVars.$breakpoint-xxlg) {
   .main-nav__wrapper {
     max-width: var(--size-main-wrapper-lg);
   }
@@ -152,12 +152,12 @@ const menuOpen = ref(false);
 .main-nav__item--sub {
   display: none;
 }
-@media (min-width: $--breakpoint-xlg) {
+@media (min-width: designSystemVars.$breakpoint-xlg) {
   .main-nav__item {
     padding: 0 calc(var(--size-base-unit) * 6);
   }
 }
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .main-nav__item--sub {
     display: flex;
     &.main-nav__item--active {

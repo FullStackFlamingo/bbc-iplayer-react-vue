@@ -72,7 +72,7 @@ i18next.addResourceBundle('en', 'translation', { home: getTranslations }, true, 
 </script>
 
 <style lang="scss" scoped>
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .mobile-only {
     display: none;
   }

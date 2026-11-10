@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 
-interface ResponsiveSize {
+type ResponsiveSize = {
   media: string;
   srcset: {
     [index: string]: string;
   };
   itemWidth: string;
-}
-interface ResponsiveSizeGroup {
+};
+type ResponsiveSizeGroup = {
   [index: string]: ResponsiveSize;
-}
+};
 const SIZES_DEFAULT: ResponsiveSizeGroup = {
   xxl: {
     media: '(min-width: 1280px)',
@@ -156,7 +156,7 @@ const SIZES_HERO: ResponsiveSizeGroup = {
 };
 
 export const useResponsiveImage = (props: { recipe: string; type: string }) => ({
-  recipeToSrcSet(srcset: { [x: string]: any }) {
+  recipeToSrcSet(srcset: { [x: string]: string }) {
     return Object.keys(srcset)
       .map((mul) => {
         const size = srcset[mul];

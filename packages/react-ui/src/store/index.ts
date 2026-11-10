@@ -1,5 +1,4 @@
-import * as toolkitRaw from '@reduxjs/toolkit'; // https://github.com/reduxjs/redux-toolkit/issues/1960
-const { configureStore } = ((toolkitRaw as any).default ?? toolkitRaw) as typeof toolkitRaw;
+import {configureStore} from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { sliceCounter } from './sliceCounter';
 

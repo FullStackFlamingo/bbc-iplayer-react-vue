@@ -4,16 +4,13 @@ import baseConfig from './vite.config';
 // https://vitejs.dev/config/
 export default defineConfig({
   ...baseConfig,
-  ssr: {
-    format: 'cjs',
-  },
   build: {
     ssr: true,
-    rollupOptions: {
-      output: {
-        entryFileNames: 'entry-server.js',
-      },
+    rolldownOptions: {
       input: './src/entry-server.tsx',
+      output: {
+        entryFileNames: '[name].js',
+      },
     },
     outDir: './dist/server',
   },

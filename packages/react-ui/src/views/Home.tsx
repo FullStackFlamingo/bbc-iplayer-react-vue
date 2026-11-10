@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { useQuery } from 'urql';
 import { breakpoint } from '@private/design-system/vars';
 import { useTranslation } from 'react-i18next';
@@ -60,7 +61,7 @@ const HomeRoot = styled.div`
 function Home() {
   const { i18n, t } = useTranslation();
   const [result] = useQuery({ query });
-  const { data, fetching, error } = result;
+  const { data /* , fetching, error */ } = result;
 
   i18n.addResourceBundle('en', 'translation', { home: data.getTranslations }, true, true); // awkward i18n merge on render?
 

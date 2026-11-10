@@ -1,5 +1,5 @@
 import React from 'react';
-import Bourne from '@hapi/bourne';
+import * as Bourne from '@hapi/bourne';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -18,6 +18,7 @@ const init = async () => {
 
   await initi18n();
 
+  // eslint-disable-next-line @eslint-react/component-hook-factories
   const AppWrapper = () => (
     <React.StrictMode>
       <Provider store={store} serverState={preloadedState}>

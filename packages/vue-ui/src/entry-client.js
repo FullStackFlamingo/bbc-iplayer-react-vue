@@ -1,5 +1,5 @@
 import { createApp } from './main';
-import Bourne from '@hapi/bourne';
+import * as Bourne from '@hapi/bourne';
 import { GLOBAL_PROP_STATE, GLOBAL_PROP_URQL_STATE } from './constants';
 
 const preloadedState = Bourne.parse(window[GLOBAL_PROP_STATE] ?? {});

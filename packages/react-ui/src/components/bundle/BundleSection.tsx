@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 const BundleSectionRoot = styled.section`
   margin-top: calc(var(--size-base-unit) * 6);
@@ -20,10 +20,10 @@ const BundleSectionViewAll = styled.a`
   }
 `;
 
-interface BundleSectionProps {
+type BundleSectionProps = {
   bundle: IPlayer.Bundle;
   children: React.ReactNode;
-}
+};
 export function BundleSection({ bundle, children }: BundleSectionProps) {
   return (
     <BundleSectionRoot>

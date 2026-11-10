@@ -1,5 +1,6 @@
 import { breakpoint } from '@private/design-system/vars';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import Logo from '../../assets/logo.svg?raw';
 
 const MainNavigationHeaderRoot = styled.div`
@@ -29,11 +30,11 @@ const MobileButton = styled.button<{ menuOpen: boolean }>`
   }
 `;
 
-interface MainNavigationHeaderProps {
+type MainNavigationHeaderProps = {
   menuOpen: boolean;
-  onMenuOpenToggle: Function;
+  onMenuOpenToggle: (menuOpen: boolean) => void;
   className?: string;
-}
+};
 export function MainNavigationHeader({ menuOpen, onMenuOpenToggle, className }: MainNavigationHeaderProps) {
   return (
     <MainNavigationHeaderRoot className={className}>

@@ -1,4 +1,3 @@
-import { IResolvers } from 'mercurius';
 import homepageJson from '../state/homepage.json' with { type: 'json' };
 
 export const typeDefs = {
@@ -50,9 +49,9 @@ export const typeDefs = {
 };
 export default typeDefs;
 
-export const resolvers: IResolvers = {
+export const resolvers = {
   NavigationSubItem: {
-    resolveType: (parameter: { liveHref: any; kind: any }, context, info) => {
+    resolveType: (parameter: { liveHref: string; kind: string } /* , context, info */) => {
       if (parameter.liveHref) {
         return 'NavigationItemChannel';
       }

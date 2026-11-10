@@ -1,5 +1,6 @@
 import { breakpoint } from '@private/design-system/vars';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { ScrollXWithButtons } from '../components-global/ScrollXWithButtons';
 
 const SubNavigationRoot = styled.nav<{ active: boolean }>`
@@ -15,19 +16,21 @@ const SubNavigationRoot = styled.nav<{ active: boolean }>`
   }
 `;
 
-interface SubNavigationProps {
+type SubNavigationProps = {
   active: boolean;
   title: React.ReactNode;
   children: React.ReactNode;
-}
+};
 export function SubNavigation({ active, title, children }: SubNavigationProps) {
   return (
     <SubNavigationRoot active={active}>
       <div className="wrapper">
-        <ScrollXWithButtons>
-          {title}
-          {children}
-        </ScrollXWithButtons>
+        {import.meta.env.SSR ? null : (
+          <ScrollXWithButtons>
+            {title}
+            {children}
+          </ScrollXWithButtons>
+        )}
       </div>
     </SubNavigationRoot>
   );

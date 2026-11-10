@@ -1,30 +1,31 @@
 export declare global {
+  // merge Window interface with extra properties
   interface Window {
-    [index: string]: any;
     __REACTUI_STATE__: string;
+    __REACTUI_URQL_STATE__: string;
   }
   namespace IPlayer {
-    interface BundleTitle {
+    type BundleTitle = {
       default: string;
       small: string;
-    }
-    interface EpisodeTitle {
+    };
+    type EpisodeTitle = {
       default: string;
       editorial: string;
       live: string;
-    }
-    interface EpisodeImage {
+    };
+    type EpisodeImage = {
       default: string;
       portrait: string;
       promotional: string;
-    }
-    interface EpisodeSynopsis {
+    };
+    type EpisodeSynopsis = {
       small: string;
       editorial: string;
       programmeSmall: string;
       live: string;
-    }
-    interface Episode {
+    };
+    type Episode = {
       id: string;
       title: EpisodeTitle;
       subtitle: EpisodeTitle;
@@ -32,18 +33,18 @@ export declare global {
       synopsis: EpisodeSynopsis;
       live: string;
       previewId: string;
-    }
-    interface BundleEntity {
+    };
+    type BundleEntity = {
       episode: Episode;
-    }
-    interface Bundle {
+    };
+    type Bundle = {
       id: string;
       type: string;
       title: BundleTitle;
       entities: [BundleEntity];
-    }
+    };
     namespace MainNav {
-      interface SubNavItem {
+      type SubNavItem = {
         id: string;
         title: string;
         active: boolean;
@@ -52,16 +53,16 @@ export declare global {
         liveHref: string;
         icon: string;
         kind: string;
-      }
+      };
 
-      interface TopNavItem {
+      type TopNavItem = {
         id: string;
         title: string;
         active: boolean;
         ariaLabel: string;
         href: string;
         subItems: Array<SubNavItem>;
-      }
+      };
     }
   }
 }

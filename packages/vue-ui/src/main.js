@@ -1,6 +1,6 @@
 import { createSSRApp, defineAsyncComponent } from 'vue';
 import { createPinia } from 'pinia';
-import urql, { dedupExchange, cacheExchange, fetchExchange, ssrExchange } from '@urql/vue';
+import urql, { cacheExchange, fetchExchange, ssrExchange } from '@urql/vue';
 import { requestPolicyExchange } from '@urql/exchange-request-policy';
 import i18next from 'i18next';
 import I18NextVue from 'i18next-vue';
@@ -22,7 +22,6 @@ export async function createApp({ preloadedUrqlState } = {}) {
   app.use(urql, {
     url: import.meta.env.SSR ? 'http://localhost:3000/graphql' : '/graphql',
     exchanges: [
-      dedupExchange,
       requestPolicyExchange({
         ttl: 60 * 1000 * 2, // 2 mins
       }),

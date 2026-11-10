@@ -1,6 +1,7 @@
 import { breakpoint } from '@private/design-system/vars';
 import { useState } from 'react';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
+
 import { useQuery } from 'urql';
 import { SvgUse } from '../components-global/SvgUse';
 import { MainNavigationHeader as MainNavigationHeaderComponent } from './MainNavigationHeader';
@@ -122,7 +123,7 @@ const SvgUseArrow = styled(SvgUse)`
 
 export function MainNavigation() {
   const [result] = useQuery({ query });
-  const { data, fetching, error } = result;
+  const { data /* , fetching, error */ } = result;
 
   const items: [IPlayer.MainNav.TopNavItem] = data.getNavigationItems?.items;
 

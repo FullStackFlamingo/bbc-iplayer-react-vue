@@ -60,7 +60,7 @@ const menuOpenProxy = computed({
   }
 }
 
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .main-nav__header {
     padding: 0;
   }

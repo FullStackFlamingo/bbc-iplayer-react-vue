@@ -83,7 +83,7 @@ const ariaLabel = computed(() => episode.value.title.default + 'Description: ' +
   }
 }
 
-@media (min-width: $--breakpoint-md) {
+@media (min-width: designSystemVars.$breakpoint-md) {
   .bundle-hero__cta__play {
     height: 72px;
     width: 72px;

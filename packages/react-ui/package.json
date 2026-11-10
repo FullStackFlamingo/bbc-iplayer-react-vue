@@ -3,6 +3,7 @@
   "private": true,
   "license": "MIT",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && npm run build:client && npm run build:server",
@@ -11,32 +12,28 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
-    "@reduxjs/toolkit": "1.8.x",
-    "react-redux": "8.x",
-    "@hapi/bourne": "3.x",
-    "styled-components": "5.x",
-    "react-ssr-prepass": "1.x",
-    "react-is": "^18.2.0",
-    "graphql": "16.x",
-    "urql": "3.x",
-    "@urql/exchange-request-policy": "1.x",
-    "@react-hook/resize-observer": "1.2.6",
-    "react-use": "17.x",
-    "slugify": "1.x",
-    "react-i18next": "11.x",
-    "i18next": "21.x"
+    "@hapi/bourne": "^4.0.1",
+    "@react-hook/resize-observer": "^2.0.2",
+    "@reduxjs/toolkit": "^2.14.0",
+    "@urql/exchange-request-policy": "^2.0.0",
+    "graphql": "^17.1.0",
+    "i18next": "^27.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18",
+    "react-i18next": "^18.0.1",
+    "react-redux": "^9.3.1",
+    "react-router-dom": "^7.18.5",
+    "react-ssr-prepass": "^1.6.0",
+    "react-use": "^17.6.1",
+    "slugify": "^1.6.9",
+    "styled-components": "^6.6.0",
+    "urql": "^5.0.4"
   },
   "devDependencies": {
-    "vite": "3.x",
-    "vitest": "0.x",
-    "@vitejs/plugin-react": "2.x",
-    "@types/react": "18.x",
-    "@types/react-dom": "18.x",
-    "@types/styled-components": "5.x",
-    "typescript": "4.x",
-    "babel-plugin-styled-components": "2.x"
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "^8.0.8",
+    "vitest": "^5.1.0"
   }
 }

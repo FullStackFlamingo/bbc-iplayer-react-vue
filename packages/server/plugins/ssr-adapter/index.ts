@@ -41,8 +41,12 @@ export const plugin = fp(
     } = options.ssrOptions;
 
     const modulePath = path.dirname(url.fileURLToPath(import.meta.resolve(`${moduleName}/package.json`)));
-    const clientManifest: vite.Manifest = await import(path.resolve(modulePath, clientManifestPath));
-    const ssrManifest: vite.Manifest = await import(path.resolve(modulePath, ssrManifestPath));
+    const clientManifest: vite.Manifest = await import(path.resolve(modulePath, clientManifestPath), {
+      with: { type: 'json' },
+    });
+    const ssrManifest: vite.Manifest = await import(path.resolve(modulePath, ssrManifestPath), {
+      with: { type: 'json' },
+    });
 
     let render: RenderFunction;
     let viteServer;
@@ -97,6 +101,7 @@ export const plugin = fp(
       fastify.register(staticPlugin, {
         root: path.resolve(modulePath, assetsPath),
         prefix: `/frontend/${moduleName}`, // matches vite.config `base`
+        decorateReply: false,
       });
     } else {
       const { port } = viteServer?.config.server || {};

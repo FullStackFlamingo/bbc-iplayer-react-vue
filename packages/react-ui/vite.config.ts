@@ -7,31 +7,18 @@ export default defineConfig({
     port: 3200,
     strictPort: true,
     hmr: {
-      clientPort: 3200,
+      port: 3201,
+    },
+    ws: {
+      port: 24241,
     },
   },
   base: '/frontend/@private/react-ui/',
-  plugins: [
-    react({
-      babel: {
-        plugins: [
-          [
-            // https://github.com/styled-components/babel-plugin-styled-components/issues/350#issuecomment-979873241
-            'babel-plugin-styled-components',
-            {
-              ssr: true,
-              displayName: true,
-              fileName: false,
-            },
-          ],
-        ],
-      },
-    }),
-  ],
+  plugins: [react()],
   build: {
     manifest: true,
     ssrManifest: true,
-    rollupOptions: {
+    rolldownOptions: {
       input: './src/entry-client.tsx',
     },
   },

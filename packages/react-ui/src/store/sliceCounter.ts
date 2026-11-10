@@ -1,5 +1,4 @@
-import * as toolkitRaw from '@reduxjs/toolkit'; // https://github.com/reduxjs/redux-toolkit/issues/1960
-const { createSlice } = ((toolkitRaw as any).default ?? toolkitRaw) as typeof toolkitRaw;
+import { createSlice } from '@reduxjs/toolkit';
 
 export const sliceCounter = createSlice({
   name: 'counter',
