@@ -30,7 +30,7 @@ http://localhost:3000/graphql
   - server at http://localhost:3000
   - /frontend/@private/react-ui/{p\*} proxy route localhost:3200
   - /frontend/@private/vue-ui/{p\*} proxy route localhost:3210
-- `npm run build` : Build frontend UIs, and typescript Hapi server
+- `npm run build` : Build frontend UIs, and typescript Fastify server
 - `npm run start`: (after a successful build) , starts production Fastify server + frontend UIs
 
 ## Notes
