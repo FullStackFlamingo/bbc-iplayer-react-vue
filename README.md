@@ -1,22 +1,22 @@
 # Frontend playground
 
-7 years experience in Vue, not nearly as much in React! I better bring myself up to speed on Facebook's oh so popular ecosystem...
+React and Vue SSR frontends for BBC iPlayer data model served via graphql.
 
 !["Clone of a certain video player site](preview.png 'Clone of a certain video player site')
 
 # Packages
 
-## server-hapi
+## server
 
 An api server, a simple shell app for mounting the frontend UI apps, a server to trigger SSR renders of the frontend UIs, and an asset server for the isomorphic frontend UI client code.
 
 ## react-ui
 
-A Typescript React 18 isomorphic app, built with Vite.
+A Typescript React isomorphic app, built with Vite.
 
 ## vue-ui
 
-A Javascript Vue 3 isomorphic app, built with Vite.
+A Javascript Vue isomorphic app, built with Vite.
 
 ## Graphql Playground
 
@@ -24,14 +24,14 @@ http://localhost:3000/graphql
 
 ## Development
 
-- `npm run dev` : starts Vite servers for the frontend UIs, starts the Hapi api & shell app server.
+- `npm run dev` : starts Vite servers for the frontend UIs, starts the Fastify api & shell app server.
   - Typescript --inspect powered by tsx.
   - Vite hot reload/devtools enabled while viewing frontend apps
   - server at http://localhost:3000
   - /frontend/@private/react-ui/{p\*} proxy route localhost:3200
   - /frontend/@private/vue-ui/{p\*} proxy route localhost:3210
 - `npm run build` : Build frontend UIs, and typescript Hapi server
-- `npm run start`: (after a successful build) , starts production Hapi server + frontend UIs
+- `npm run start`: (after a successful build) , starts production Fastify server + frontend UIs
 
 ## Notes
 
