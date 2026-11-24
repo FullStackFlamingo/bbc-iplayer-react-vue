@@ -38,7 +38,6 @@ const imageRecipe = computed(() => {
 .bundle-entity {
   &:focus,
   &:hover {
-    outline: none;
     .bundle-entity__image {
       outline: 2px solid #fff;
     }

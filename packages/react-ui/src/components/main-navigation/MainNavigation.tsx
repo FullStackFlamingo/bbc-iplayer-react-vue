@@ -125,7 +125,7 @@ export function MainNavigation() {
   const [result] = useQuery({ query });
   const { data /* , fetching, error */ } = result;
 
-  const items: [IPlayer.MainNav.TopNavItem] = data.getNavigationItems?.items;
+  const items: IPlayer.MainNav.TopNavItem[] = data.getNavigationItems?.items || [];
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [activeSubNav, setActiveSubNav] = useState<string | null>(null);

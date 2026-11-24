@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { MainNavigation } from './components/main-navigation/MainNavgiation';
+import { MainNavigation } from './components/main-navigation/MainNavigation';
 import { SkipToContent } from './components/SkipToContent';
 import Home from './views/Home';
 import iconSprite from '@private/design-system/icons.svg?raw';

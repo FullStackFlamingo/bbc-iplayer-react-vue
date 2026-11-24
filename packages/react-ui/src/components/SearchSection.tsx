@@ -26,7 +26,6 @@ const SearchSectionButton = styled.button`
 
   &:focus,
   &:hover {
-    outline: none;
     fill: var(--color-accent-1);
   }
   svg {

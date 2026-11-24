@@ -6,7 +6,6 @@ import { ResponsiveImage } from '../components-global/ResponsiveImage';
 const BundleEntityRoot = styled.a`
   &:focus,
   &:hover {
-    outline: none;
     .bundle-entity__image {
       outline: 2px solid #fff;
     }

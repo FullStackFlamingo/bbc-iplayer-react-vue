@@ -10,7 +10,7 @@ export const initi18n = () => {
       fallbackLng: 'en',
 
       interpolation: {
-        escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
+        escapeValue: false, // react generally escapes by default, prevent double escape  => https://www.i18next.com/translation-function/interpolation#unescape
       },
     });
 };

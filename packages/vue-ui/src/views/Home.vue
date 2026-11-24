@@ -64,8 +64,8 @@ const { data, error } = await useQuery({
   `,
 });
 
-const bundleHero = data.value.getBundlesForPath.find((item) => item.type === 'hero');
-const bundleRows = data.value.getBundlesForPath.filter((item) => item.type !== 'hero');
+const bundleHero = data.value.getBundlesForPath?.find((item) => item.type === 'hero') || {};
+const bundleRows = data.value.getBundlesForPath?.filter((item) => item.type !== 'hero') || [];
 
 const { getTranslations } = data.value;
 i18next.addResourceBundle('en', 'translation', { home: getTranslations }, true, true);
