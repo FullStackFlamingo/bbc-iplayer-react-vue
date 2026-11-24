@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-
+import { useEffect } from 'react';
 import { useQuery } from 'urql';
 import { breakpoint } from '@private/design-system/vars';
 import { useTranslation } from 'react-i18next';
@@ -63,8 +63,11 @@ function Home() {
   const [result] = useQuery({ query });
   const { data /* , fetching, error */ } = result;
 
-  i18n.addResourceBundle('en', 'translation', { home: data.getTranslations }, true, true); // awkward i18n merge on render?
-
+  useEffect(() => {
+    if (!result.error && result.data.getTranslations) {
+      i18n.addResourceBundle('en', 'translation', { home: result.data.getTranslations }, true, true);
+    }
+  }, [result, i18n]);
   const bundleHero = data.getBundlesForPath?.find((item: IPlayer.Bundle) => item.type === 'hero');
   const bundleRows = data.getBundlesForPath?.filter((item: IPlayer.Bundle) => item.type !== 'hero');
 
